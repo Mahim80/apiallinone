@@ -1,0 +1,64 @@
+# Project TODO
+
+- [x] Public Bangla NID PDF upload interface
+- [x] Upload validation for PDF type and 10 MB size limit
+- [x] Server-side PDF text extraction with Bengali OCR fallback
+- [x] Portrait and signature extraction with PDF soft-mask transparency preservation
+- [x] Secure temporary-file cleanup after extraction
+- [x] Upload and extraction error handling with clear user-facing messages
+- [x] Processing, validation, success, and empty states in the public interface
+- [x] Responsive extracted-results view with NID fields, portrait, and signature
+- [x] Copy extracted response to clipboard
+- [x] Download extracted response as JSON
+- [x] Production runtime with Poppler and Bengali Tesseract dependencies
+- [x] Vitest coverage for extraction, validation, and response behavior
+- [x] Responsive browser verification at desktop and mobile widths
+- [x] Final build and checkpoint before delivery
+- [x] Fix TypeScript target and restart the dev server after adding pngjs
+- [x] Add UI fallbacks for missing portrait and signature URLs
+- [x] Add Vitest coverage for pdf.extract validation and response behavior
+- [x] Save final checkpoint after the verified build
+- [x] Add a successful pdf.extract response-shape test with extracted fields and image links
+- [x] Add an oversized payload rejection test for pdf.extract
+- [x] Compare NIAZ.pdf source text and OCR for nameBangla and birthPlace ordering
+- [x] Correct Bangla Unicode normalization and field-specific OCR/text selection
+- [x] Add NIAZ.pdf regression assertions for nameBangla and birthPlace
+- [x] Re-run full checks and save a new checkpoint
+- [x] Preserve OCR spellings such as নিয়াজ, বাড়িয়া, and ভূইয়া without legacy glyph substitution
+- [x] Confirm signature-only behavior change against the requested NIAZ response format
+- [x] Add end-to-end NIAZ pdf.extract validation for final fields and transparent signature output
+- [x] Save the post-NIAZ-fix checkpoint
+- [x] Exercise the public pdf.extract route with real NIAZ.pdf and assert final response fields, image links, and transparent signature
+- [x] Save the post-fix checkpoint after route-level validation
+- [x] Fetch the route-produced signature asset and assert PNG alpha transparency/non-black content
+- [x] Save the final post-route-validation checkpoint
+- [x] Compare 4198016687.pdf text layer and OCR for the English-name suffix
+- [x] Tighten nameEnglish extraction so trailing PDF noise is excluded
+- [x] Add regression coverage for 4198016687 nameEnglish output
+- [x] Validate the real PDF route and save a new checkpoint
+- [x] Exercise the real pdf.extract route with 4198016687.pdf and assert nameEnglish excludes ES/RES noise
+- [x] Save a new checkpoint after 4198016687 route validation
+- [x] Remove Mouza/Moholla and similar labels from village/road address values
+- [x] Add a regression test for label leakage in 4198016687 address output
+- [x] Validate the real address response and save a new checkpoint
+- [x] Inspect ASMA.pdf address source and confirm Moholla is a placeholder label
+- [x] Remove standalone Moholla and similar placeholders from village/road output
+- [x] Add ASMA regression coverage for the corrected address
+- [x] Validate the real ASMA route and save a new checkpoint
+- [x] Always include the `গ্রাম/রাস্তা:` label, even when the value is empty
+- [x] Prefer Additional Village/Road, then fall back to Mouza/Moholla when empty
+- [x] Add regression tests for empty and fallback address values
+- [x] Validate ASMA/NIAZ address responses and save a new checkpoint
+- [x] Enforce lookup order: Village/Road, then Additional Village/Road, then Mouza/Moholla
+- [x] Add regression tests proving the first non-placeholder candidate wins
+- [x] Validate the clarified ASMA behavior and save a new checkpoint
+- [x] Add an all-empty location test that keeps the `গ্রাম/রাস্তা:` label
+- [x] Add a precedence test proving Village/Road wins over both fallback fields
+- [x] Save the final address-priority checkpoint after these tests pass
+- [x] Compare 6897581671.pdf parent-name text layer and OCR output
+- [x] Remove trailing `¢` and `»` noise from fatherName and motherName
+- [x] Add regression tests for parent-name trailing noise
+- [ ] Validate the real 6897581671 route and save a new checkpoint
+- [x] Create a Render deployment guide with exact Docker, environment, build, and start settings
+- [x] Package the final source code for GitHub/Render deployment
+- [x] Verify the final archive excludes generated build artifacts and local secrets
